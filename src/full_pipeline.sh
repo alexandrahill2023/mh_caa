@@ -2,7 +2,7 @@
 # Running this script end-to-end has NOT been tested
 
 # These directories need to be pre-created as specified
-RAW_ARTICLES_DIR="..data/black_fem/" # Each article should be in a separate file, where the filename is article_id.txt
+RAW_ARTICLES_DIR="..data/black_fem" # Each article should be in a separate file, where the filename is article_id.txt
 STANFORD_DIR="..data/stanford-parser-full-2020-11-17" # Downloaded Stanford parser
 
 
