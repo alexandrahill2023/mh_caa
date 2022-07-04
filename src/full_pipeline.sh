@@ -7,10 +7,10 @@ STANFORD_DIR="..data/stanford-parser-full-2020-11-17" # Downloaded Stanford pars
 
 
 # These are files are created by this script or directories that will be populated (directories need to exist)
-NLP_OUTPUT_DIR="/usr1/home/anjalief/nlp_output_pull2" # Directory to store output of stanford parser
-ELMO_INPUT_DIR="/projects/tir3/users/anjalief/elmo_embeddings/raw_tokenized/metoo_pull2" # Directory to store input to ELMo
-ELMO_OUTPUT_DIR="/projects/tir3/users/anjalief/elmo_embeddings/embeddings/metoo_pull2" # This should be the same as ELMO_INPUT_DIR but with "raw_tokenized" replaced with "embeddings"
-MATCHED_EMBEDDING_CACHE="/projects/tir3/users/anjalief/elmo_embeddings/embeddings/metoo010_matched_tupl.pickle"
+NLP_OUTPUT_DIR="../nlp_output" # Directory to store output of stanford parser
+ELMO_INPUT_DIR="../elmo_embeddings/raw_tokenized/input" # Directory to store input to ELMo
+ELMO_OUTPUT_DIR="../elmo_embeddings/embeddings/output" # This should be the same as ELMO_INPUT_DIR but with "raw_tokenized" replaced with "embeddings"
+MATCHED_EMBEDDING_CACHE="../elmo_embeddings/embeddings/metoo010_matched_tupl.pickle"
 EVAL_SCORE_CACHE="aziz_entities_limit.pickle"
 
 
@@ -19,7 +19,7 @@ find $RAW_ARTICLES_DIR -name "*txt" > filelist.txt
 java -cp "*" -Xmx50g edu.stanford.nlp.pipeline.StanfordCoreNLP -annotators tokenize,ssplit,pos,lemma,ner,parse,dcoref,depparse -filelist filelist.txt -outputDirectory $NLP_OUTPUT_DIR
 
 # Use output of parser to build tokenized files
-NLP_OUTPUT_DIR="/projects/tir3/users/anjalief/corpora/nlp_output_pull2/" # I copied these over to tir
+NLP_OUTPUT_DIR="../corpora/nlp_output/" # I copied these over to tir
 python prep_elmo.py --input_glob "$NLP_OUTPUT_DIR/*.xml" --output_dir $ELMO_INPUT_DIR
 
 # Extract elmo embeddings over all files
