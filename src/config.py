@@ -1,7 +1,7 @@
 # Downloaded lexicons
-CONNO_FRAME="/projects/tir3/users/anjalief/lexicons/annotated_connotation_frames/full_frame_info.txt"
+CONNO_FRAME="../data/full_frame_info.txt"
 CONNO_DIR="/projects/tir3/users/anjalief/lexicons/annotated_connotation_frames/"
-POWER_AGENCY="/projects/tir3/users/anjalief/lexicons/agency_power.csv"
+POWER_AGENCY="../data/agency_power.csv"
 RAW_CONNOTATIONS="/projects/tir3/users/anjalief/lexicons/annotated_connotation_frames/raw_cf_anonymized_output.csv"
 
 # Generated for this project
