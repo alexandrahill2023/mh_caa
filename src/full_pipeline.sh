@@ -16,7 +16,7 @@ EVAL_SCORE_CACHE="aziz_entities_limit.pickle"
 
 # Run stanford NLP pipleine over all texts
 find $RAW_ARTICLES_DIR -name "*txt" > filelist.txt
-java -cp "*" -Xmx50g edu.stanford.nlp.pipeline.StanfordCoreNLP -annotators tokenize,ssplit,pos,lemma,ner,parse,dcoref,depparse -filelist filelist.txt -outputDirectory $NLP_OUTPUT_DIR
+java -cp "*" -Xmx10g edu.stanford.nlp.pipeline.StanfordCoreNLP -annotators tokenize,ssplit,pos,lemma,ner,parse,dcoref,depparse -filelist filelist.txt -outputDirectory $NLP_OUTPUT_DIR
 
 # Use output of parser to build tokenized files
 NLP_OUTPUT_DIR="/projects/tir3/users/anjalief/corpora/nlp_output_pull2/" # I copied these over to tir
